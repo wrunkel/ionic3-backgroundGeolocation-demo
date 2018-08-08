@@ -7,8 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  <h5>wanjas-backgroundGeolocation-demo</h5>
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    a demo app to test the functionality of the ionic nativ background geolocation plugin, if started it loggs the geolocation attributes every second.
   </p>
+
+  <button ion-button (click)="getGeo()">start background tracking</button>
+  <button ion-button (click)="stopGeo()">stop background tracking</button>
+  <button ion-button (click)="getGeoCordinats()">get locations</button>
+
+    <div *ngFor="let location of subject | async">
+      locationId: {{location.locationId}}, Lat: {{ location.lat }}, Long: {{ location.lng }}, Time: {{ location.time }}, Speed: {{ location.speed }}, accuracy: {{ location.accuracy }}, bearing: {{ location.bearing }}, coords: {{ location.coords}}
+    </div>
 </ion-content>
